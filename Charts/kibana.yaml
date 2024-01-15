@@ -1,0 +1,15 @@
+apiVersion: helm.toolkit.fluxcd.io/v2beta1
+kind: HelmRelease
+metadata:
+  name: kibana
+  namespace: flux-system
+spec:
+  releaseName: kibana
+  chart:
+    repository: elastic-charts
+    name: kibana
+    version: 8.5.1
+  values:
+    elasticsearch:
+      hosts: "http://exampledomain27.pp.ua:9200"
+
