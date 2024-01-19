@@ -20,5 +20,7 @@ spec:
     version: 8.5.1
   values:
     clusterName: my-cluster
+    replicas: 1
+    minimumMasterNodes: 1
 
 
