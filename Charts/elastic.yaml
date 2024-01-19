@@ -12,14 +12,21 @@ kind: HelmRelease
 metadata:
   name: elasticsearch
   namespace: flux-system
+  labels:
+    app: elastic
 spec:
+  releaseName: elastic
+  interval: 5m
   chart:
-    repository: elastic-charts
-    name: elasticsearch
-    version: 8.5.1
-  values:
-    clusterName: my-cluster
-    replicas: 1
-    minimumMasterNodes: 1
+    spec:
+      chart: elasticsearch
+      version: '8.5.1'
+      sourceRef:
+        kind: HelmRepository
+        name: elastic-charts
+        namespace: flux-system
+      interval: 1m
+      
+
 
 
