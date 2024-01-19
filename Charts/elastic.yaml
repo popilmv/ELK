@@ -13,7 +13,6 @@ metadata:
   name: elasticsearch
   namespace: flux-system
 spec:
-  releaseName: elasticsearch
   chart:
     repository: elastic-charts
     name: elasticsearch
