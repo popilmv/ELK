@@ -27,8 +27,8 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    replicas: 1
-    minimumMasterNodes: 1
+    replicas: 2
+    minimumMasterNodes: 2
       
 
 
