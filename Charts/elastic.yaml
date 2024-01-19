@@ -26,9 +26,9 @@ spec:
         name: elastic-charts
         namespace: flux-system
       interval: 1m
-    values:
-      replicas: 1
-      minimumMasterNodes: 1
+  values:
+    replicas: 1
+    minimumMasterNodes: 1
       
 
 
