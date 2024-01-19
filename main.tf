@@ -11,7 +11,7 @@ resource "google_container_cluster" "my_cluster" {
 
   node_config {
     machine_type = "e2-medium"
-    disk_size_gb = 100  
+    disk_size_gb = 180  
     image_type   = "COS_CONTAINERD"
     spot         = true
   }
@@ -26,7 +26,7 @@ resource "google_container_node_pool" "infra_pool" {
 
   node_config {
     machine_type = "e2-small"
-    disk_size_gb = 40
+    disk_size_gb = 70
     image_type   = "COS_CONTAINERD"
   }
 
@@ -40,7 +40,7 @@ resource "google_container_node_pool" "app_pool" {
 
   node_config {
     machine_type = "e2-small"
-    disk_size_gb = 40
+    disk_size_gb = 50
     image_type   = "COS_CONTAINERD"
   }
 
