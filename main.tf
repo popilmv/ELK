@@ -10,7 +10,7 @@ resource "google_container_cluster" "my_cluster" {
   deletion_protection=false
 
   node_config {
-    machine_type = "e2-standart-4"
+    machine_type = "e2-standard-4"
     disk_size_gb = 180  
     image_type   = "COS_CONTAINERD"
     spot         = true
