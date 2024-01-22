@@ -27,8 +27,8 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    replicas: 2
-    minimumMasterNodes: 2
+    replicas: 1
+    minimumMasterNodes: 1
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
