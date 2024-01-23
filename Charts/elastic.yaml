@@ -74,6 +74,6 @@ spec:
     ingress:
       hosts:
         - host: exampledomain27.pp.ua
-
+    elasticsearchHosts: "elasticsearch-master:9200"  
 
 
