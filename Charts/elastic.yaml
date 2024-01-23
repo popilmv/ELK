@@ -29,7 +29,7 @@ spec:
   values:
     replicas: 1
     minimumMasterNodes: 1
-    protocol: http
+    protocol: https
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
@@ -71,9 +71,6 @@ spec:
         namespace: flux-system
       interval: 1m
   values:
-    ingress:
-      hosts:
-        - host: exampledomain27.pp.ua
     elasticsearchHosts: "elasticsearch-master:9200"  
 
 
