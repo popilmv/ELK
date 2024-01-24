@@ -32,18 +32,7 @@ spec:
     esConfig: 
       elasticsearch.yml: | 
         xpack.security.enabled: false
-    service: 
-      enabled: true 
-      labels: {} 
-      labelsHeadless: {} 
-      type: NodePort 
-      nodePort: "30234"
-      annotations: {} 
-      httpPortName: http 
-      transportPortName: transport 
-      loadBalancerIP: "" 
-      loadBalancerSourceRanges: [] 
-      externalTrafficPolicy: ""
+
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
