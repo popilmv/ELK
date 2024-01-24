@@ -51,26 +51,41 @@ spec:
         namespace: flux-system
       interval: 1m
 ---
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+apiVersion: source.toolkit.fluxcd.io/v1beta2
+kind: HelmRepository
+metadata:
+  name: fluent
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  url: https://helm.elastic.cometadata:
+  name: fluent
+  namespace: flux-system
+spec:
+  interval: 5m0s
+  url: https://fluent.github.io/helm-charts
+---
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: kibana
+  name: fluent-bit
   namespace: flux-system
   labels:
-    app: kibana
+    app: fluent
 spec:
-  releaseName: kibana
+  releaseName: kfluent-bit
   interval: 5m
   chart:
     spec:
-      chart: kibana
-      version: '8.5.1'
+      chart: fluent-bit
+      version: '0.42.0'
       sourceRef:
         kind: HelmRepository
-        name: elastic-charts
+        name: fluent 
         namespace: flux-system
       interval: 1m
-  values:
-    elasticsearchHosts: "elasticsearch-master:9200"  
+
 
 
