@@ -70,6 +70,11 @@ spec:
         name: elastic-charts
         namespace: flux-system
       interval: 1m
+  values:
+    ingress:
+      enabled: true
+      hosts:
+        - host: exampledomain27.pp.ua
 
 
 
