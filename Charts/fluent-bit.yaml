@@ -16,7 +16,7 @@ metadata:
   labels:
     app: fluent
 spec:
-  releaseName: kfluent-bit
+  releaseName: fluent-bit
   interval: 5m
   chart:
     spec:
