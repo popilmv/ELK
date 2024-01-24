@@ -56,23 +56,54 @@ spec:
   values:
     persistence:
       enabled: true
-    logstashConfig:
-      logstash.yml: |
-        http.host: 0.0.0.0
-        xpack.monitoring.enabled: false
-    logstashPipeline: 
-    logstash.conf: |
+    # logstashConfig:
+    #   logstash.yml: |
+    #     http.host: 0.0.0.0
+    #     xpack.monitoring.enabled: false
+    # logstashPipeline: 
+    # logstash.conf: |
+    #     input {
+    #       beats {
+    #         port => 5044
+    #       }
+    #     }
+    #     output {
+    #       elasticsearch {
+    #         hosts => "http://elasticsearch-master.flux-system.svc.cluster.local:9200"
+    #         manage_template => false
+    #         index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
+    #         document_type => "%{[@metadata][type]}"
+    #       }
+    #     }
+    logstashPipeline:
+      logstash.conf: |
         input {
           beats {
             port => 5044
           }
         }
+        filter {
+        }
         output {
           elasticsearch {
-            hosts => "http://elasticsearch-master.flux-system.svc.cluster.local:9200"
-            manage_template => false
             index => "%{[@metadata][beat]}-%{+YYYY.MM.dd}"
-            document_type => "%{[@metadata][type]}"
+            hosts => [ "elasticsearch-master:9200" ]
+          }
+        }
+      devopsdashboard.conf: |
+        input {
+          tcp {
+            port => 9500
+            codec => json
+          }
+        }
+        filter {
+            }
+        }
+        output {
+          elasticsearch {
+            index => "devopsdashboard-%{+YYYY.MM.dd}"
+            hosts => [ "elasticsearch-master:9200" ]
           }
         }
 
