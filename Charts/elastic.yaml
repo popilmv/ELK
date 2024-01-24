@@ -58,18 +58,7 @@ metadata:
   namespace: flux-system
   labels:
     app: kibana
-spec:
-  releaseName: kibana
-  interval: 5m
-  chart:
-    spec:
-      chart: kibana
-      version: '8.5.1'
-      sourceRef:
-        kind: HelmRepository
-        name: elastic-charts
-        namespace: flux-system
-      interval: 1m
+
 
 
 
