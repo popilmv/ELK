@@ -34,7 +34,7 @@ spec:
     minimumMasterNodes: 1
     esConfig: 
       elasticsearch.yml: | 
-        xpack.security.enabled=false
+        xpack.security.enabled:false
     # extraEnvs:
     #   - name: xpack.security.enabled
     #     value: false  
