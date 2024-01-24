@@ -34,12 +34,10 @@ spec:
     minimumMasterNodes: 1
     esConfig: 
       elasticsearch.yml: | 
-        xpack:
-          security: 
-            enabled: false
-    extraEnvs:
-      - name: xpack.security.enabled
-        value: false  
+        xpack.security.enabled: false
+    # extraEnvs:
+    #   - name: xpack.security.enabled
+    #     value: false  
 
 # ---
 # apiVersion: helm.toolkit.fluxcd.io/v2beta1
