@@ -27,3 +27,6 @@ spec:
         name: fluent 
         namespace: flux-system
       interval: 1m
+  targetNamespace: elk
+  install:
+    createNamespace: true 
