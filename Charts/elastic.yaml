@@ -37,6 +37,10 @@ spec:
         xpack:
           security: 
             enabled: false
+    extraEnvs:
+      - name: xpack.security.enabled
+        value: false  
+
 # ---
 # apiVersion: helm.toolkit.fluxcd.io/v2beta1
 # kind: HelmRelease
